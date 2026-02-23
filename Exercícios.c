@@ -60,22 +60,3 @@ int main(){
     
 
 }
- //Menu interativo - Tema 3: Nível Aventureiro
-  printf("Esolha um atributo:\n");
-  printf("1. População\n");
-  printf("2. Área\n");
-  printf("3. PIB\n");
-  printf("4. Número de pontos turísticos\n");
-  printf("5. Densidade demográfica\n");
-  printf("Atributo: ");
-  scanf("%d", &escolhaJogador);
-
-  switch (escolhaJogador)
-  {
-  case 1:
-    printf("Carta")
-    break;
-  
-  default:
-    break;
-  }
