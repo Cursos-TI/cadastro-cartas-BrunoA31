@@ -5,7 +5,7 @@
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
 int main() {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
+  // Área para definição das variáveis para armazenar as propriedades das cidades - Tema 2: Nível Novato
   int carta1, carta2;
   char estado1, estado2;
   char cod1[4], cod2[4];
@@ -18,8 +18,9 @@ int main() {
   float pibpc1, pibpc2;
   float sp1, sp2;
   int compPopulacao, compArea, compPib, compPontos, compDensidade, compPibpc, compSp;
+  int escolhaJogador;
 
-  // Área para entrada de dados
+  // Área para entrada de dados - Tema 2: Nível Novato
   //Carta 1
   printf("Digite o número da carta (De 1 a 2): ");
   scanf("%d", &carta1);
@@ -50,7 +51,7 @@ int main() {
   sp1 = (float)populacao1 + area1 + pib1 + (float)pontos1 + pibpc1 + 1.0/densidade1;
   printf("\n");
 
-
+  // Área para entrada de dados - Tema 2: Nível Novato
   //Carta 2
   printf("Digite o número da carta (De 1 a 2): ");
   scanf("%d", &carta2);
@@ -76,12 +77,15 @@ int main() {
   printf("Digite a quantidade de pontos turísticos na cidade: ");
   scanf("%d", &pontos2);
 
+  // Cálculo da densidade populacional e PIB per capta - Tema 2: Nível Aventureiro
   densidade2 = (double)populacao2/(double)area2;
   pibpc2 = (float)(pib2*1000000000)/populacao2;
+  
+  // Cálculo do Super Poder - Tema 2: Nível Mestre
   sp2 = (float)populacao2 + area2 + pib2 + (float)pontos2 + pibpc2 + 1.0/densidade2;
   printf("\n");
 
-  // Área para exibição dos dados da cidade
+  // Área para exibição dos dados da cidade - Tema 2: Níveis Novato, Aventureiro e Mestre
   //Carta 1
   printf("Carta %d: \n", carta1);
   printf("Estado: %c \n", estado1);
@@ -110,7 +114,7 @@ int main() {
   printf("Super Poder: %.2f \n", sp2);
   printf("\n");
 
-  //Comparação das duas cartas
+  //Comparação das duas cartas - Tema 2: Nível Mestre
   compPopulacao = populacao1 > populacao2;
   compArea = area1 > area2;
   compPontos = pontos1 > pontos2;
@@ -119,7 +123,7 @@ int main() {
   compPibpc = pibpc1 > pibpc2;
   compSp = sp1 > sp2;
 
-  // Área para exibição das comparações
+  // Área para exibição das comparações - Tema 2: Nível Mestre
   printf("Comparação das cartas: \n");
   printf("População: Carta %d venceu (%d)\n", 1+(1-compPopulacao), compPopulacao);
   printf("Área: Carta %d venceu (%d)\n", 1+(1-compArea), compArea);
@@ -130,7 +134,7 @@ int main() {
   printf("Super Poder: Carta %d venceu (%d)\n",  1+(1-compSp), compSp);
   printf("\n");
   
-  //Comparação do atributo população
+  //Comparação do atributo população - Tema 3: Nível Novato
   printf("Comparação de cartas (Atributo: População):\n");
   printf("\n");
   printf("Carta 1 - %s: %lu\n", cidade1, populacao1);
@@ -140,6 +144,5 @@ int main() {
   } else {
     printf("Resultado: Carta 2 (%s) venceu!\n", cidade2);
   }
-
 return 0;
 } 
