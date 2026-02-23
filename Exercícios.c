@@ -57,6 +57,4 @@ int main(){
     else {
         printf("### Você perdeu! ###\n");
     }
-    
-
 }
