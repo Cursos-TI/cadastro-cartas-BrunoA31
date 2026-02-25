@@ -3,58 +3,51 @@
 #include <time.h>
 
 int main(){
-    int escolhadoJogador, escolhaComputador;
+    int numeroJogador, numeroComputador, resultado;
+    char opcao;
+
     srand(time(0));
+    numeroComputador = rand() % 100 + 1;
 
-    printf("*** Jogo de Jokenpô ***\n");
-    printf("Escolha uma opção:\n");
-    printf("1. Pedra\n");
-    printf("2. Papel\n");
-    printf("3. Tesoura\n");
-    printf("Escolha: ");
-    scanf("%d", &escolhadoJogador);
+    printf("Você deve escolher um número e um tipo de comparação\n");
+    printf("M. Maior\n");
+    printf("N. Menor\n");
+    printf("I. Igual\n");
 
-    escolhaComputador = rand() % 3 + 1;
+    printf("Esolha a comparação: ");
+    scanf(" %c", &opcao);
 
-    switch (escolhadoJogador)
+    printf("Escolha o seu número: ");
+    scanf("%d", &numeroJogador);
+
+    printf("O número do computador é: %d\n", numeroComputador);
+    
+    switch (opcao)
     {
-    case 1:
-        printf("Jogador: Pedra - ");
+    case 'M':
+    case 'm':
+        resultado = numeroJogador > numeroComputador ? 1 : 0;
+
         break;
-    case 2:
-        printf("Jogador: Papel - ");
+    case 'N':
+    case 'n':
+        resultado = numeroJogador < numeroComputador ? 1 : 0;
         break;
-    case 3:
-        printf("Jogador: Tesoura - ");
-        break;
+    case 'I':
+    case 'i':
+        resultado = numeroJogador == numeroComputador ? 1 : 0;
+        break;    
     default:
-        printf("Opção inválida\n");
+        printf("Opção inválida!\n");
         break;
+    }
+    if (resultado == 1)
+    {
+        printf("Você venceu!\n");
+    }
+    else{
+        printf("Você perdeu!\n");    }
+    
     }
 
-    switch (escolhaComputador)
-    {
-    case 1:
-        printf("Computador: Pedra\n");
-        break;
-    case 2:
-        printf("Computador: Papel\n");
-        break;
-    case 3:
-        printf("Computador: Tesoura\n");
-        break;
-    }
 
-    if (escolhaComputador == escolhadoJogador)
-    {
-        printf("### Jogo empatou! ###\n");
-    } else if ((escolhadoJogador == 1) && (escolhaComputador == 3) ||
-               (escolhadoJogador == 2) && (escolhaComputador == 1) ||
-               (escolhadoJogador == 3) && (escolhaComputador == 2))
-    {
-        printf("### Parabéns, você ganhou! ###\n");
-    }
-    else {
-        printf("### Você perdeu! ###\n");
-    }
-}
